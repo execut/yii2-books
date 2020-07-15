@@ -1,0 +1,29 @@
+{
+  "name": "execut/yii2-books",
+  "description": "Yii2 books module",
+  "keywords": ["yii2 books"],
+  "homepage": "https://github.com/execut/yii2-books",
+  "type": "library",
+  "license": "Apache-2.0",
+  "support": {
+    "issues": "https://github.com/execut/yii2-books/issues?state=open",
+    "wiki": "https://github.com/execut/yii2-books/wiki",
+    "source": "https://github.com/execut/yii2-books"
+  },
+  "authors": [
+    {
+      "name": "eXeCUT"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.4",
+    "yiisoft/yii2": "@dev",
+    "execut/yii2-crud-fields": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "execut\\books\\": ""
+    }
+  }
+}
