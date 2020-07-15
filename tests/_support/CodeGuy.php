@@ -1,5 +1,5 @@
 <?php
-namespace execut\templates;
+namespace execut\books;
 
 /**
  * Inherited Methods

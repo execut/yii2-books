@@ -14,10 +14,26 @@ class Bootstrapper implements \execut\crud\bootstrap\Bootstrapper
     {
         $navigation->addConfigurator([
             'class' => Configurator::class,
-            'module' => 'crudFieldsExample',
+            'module' => 'books',
             'moduleName' => 'СRUD fields examples',
             'modelName' => AllFields::MODEL_NAME,
             'controller' => 'all-fields',
+        ]);
+
+        $navigation->addConfigurator([
+            'class' => Configurator::class,
+            'module' => 'books',
+            'moduleName' => 'СRUD fields examples',
+            'modelName' => 'Books',
+            'controller' => 'books',
+        ]);
+
+        $navigation->addConfigurator([
+            'class' => Configurator::class,
+            'module' => 'books',
+            'moduleName' => 'СRUD fields examples',
+            'modelName' => 'Authors',
+            'controller' => 'authors',
         ]);
     }
 }

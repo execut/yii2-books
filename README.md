@@ -1,2 +1,4 @@
 # yii2-books
-Yii2 books module
+module to demonstrate the capabilities of my following components:
+* execut/yii2-crud
+* execut/yii2-navigation

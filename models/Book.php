@@ -12,7 +12,6 @@ class Book extends ActiveRecord
         return [
             Behavior::KEY => [
                 'class' => Behavior::class,
-                'module' => 'crudExample',
                 'fields' => [
                     'id' => [
                         'class' => \execut\crudFields\fields\Id::class,

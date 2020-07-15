@@ -13,14 +13,32 @@ class BootstrapperTest extends Unit
 {
     public function testBootstrapForAdmin() {
         $navigation = $this->getMockBuilder(Component::class)->getMock();
-        $navigation->expects($this->once())
+        $navigation->expects($this->at(0))
             ->method('addConfigurator')
             ->with([
                 'class' => Configurator::class,
-                'module' => 'crudFieldsExample',
+                'module' => 'books',
                 'moduleName' => 'СRUD fields examples',
                 'modelName' => AllFields::MODEL_NAME,
                 'controller' => 'all-fields',
+            ]);
+        $navigation->expects($this->at(1))
+            ->method('addConfigurator')
+            ->with([
+                'class' => Configurator::class,
+                'module' => 'books',
+                'moduleName' => 'СRUD fields examples',
+                'modelName' => 'Books',
+                'controller' => 'books',
+            ]);
+        $navigation->expects($this->at(2))
+            ->method('addConfigurator')
+            ->with([
+                'class' => Configurator::class,
+                'module' => 'books',
+                'moduleName' => 'СRUD fields examples',
+                'modelName' => 'Authors',
+                'controller' => 'authors',
             ]);
 
         $bootstrapper = new Bootstrapper();

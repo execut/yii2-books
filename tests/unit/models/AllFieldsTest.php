@@ -49,7 +49,7 @@ class AllFieldsTest extends TestCase
         $query = $hasOne->getRelationQuery();
         $this->assertInstanceOf(ActiveQuery::class, $query);
         $this->assertEquals([
-            '/crudFieldsExample/all-fields'
+            '/books/all-fields'
         ], $hasOne->url);
     }
 

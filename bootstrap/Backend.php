@@ -6,10 +6,10 @@ use execut\crud\bootstrap\Bootstrapper;
 
 class Backend extends \execut\crud\bootstrap\Backend
 {
-    public $moduleId = 'crudFieldsExample';
+    public $moduleId = 'books';
     protected $_defaultDepends = [
         'bootstrap' => [
-            'crudFieldsExampleCommon' => [
+            'booksCommon' => [
                 'class' => Common::class,
             ]
         ]

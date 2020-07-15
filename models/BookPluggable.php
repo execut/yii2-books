@@ -9,7 +9,7 @@ class BookPluggable extends Book
     {
         return ArrayHelper::merge(parent::behaviors(), [
             Behavior::KEY => [
-                'plugins' => \yii::$app->getModule('crudExample')->booksPlugins,
+                'plugins' => \yii::$app->getModule('booksNative')->booksPlugins,
             ]
         ]);
     }

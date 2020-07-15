@@ -35,7 +35,7 @@ class AllFields extends ActiveRecord
             ]),
             'orderByAttribute' => false,
             'url' => [
-                '/crudFieldsExample/all-fields',
+                '/books/all-fields',
             ],
         ]);
 
@@ -68,7 +68,6 @@ class AllFields extends ActiveRecord
         return [
             'fields' => [
                 'class' => Behavior::class,
-                'module' => 'crudFieldsExample',
                 'fields' => [
                     'id' => [
                         'class' => Id::class,
@@ -112,7 +111,7 @@ class AllFields extends ActiveRecord
                     ],
                     'updated_fields' => [
                         'class' => Group::class,
-                        'label' => \yii::t('execut/crudFieldsExample', 'Updated Fields'),
+                        'label' => \yii::t('execut/books', 'Updated Fields'),
                     ],
                     'change_updated' => [
                         'class' => Date::class,
