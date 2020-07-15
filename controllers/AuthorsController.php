@@ -32,7 +32,7 @@ class AuthorsController extends Controller
     {
         $crud = new Crud([
             'modelClass' => Author::class,
-            'modelName' => 'Authors',
+            'modelName' => Author::MODEL_NAME,
         ]);
         return $crud->actions();
     }

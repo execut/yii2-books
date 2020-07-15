@@ -8,6 +8,7 @@ use yii\db\ActiveRecord;
 class Book extends ActiveRecord
 {
     use BehaviorStub;
+    const MODEL_NAME = '{n,plural,=0{Books} =1{Book} other{Books}}';
     public function behaviors() {
         return [
             Behavior::KEY => [
@@ -32,5 +33,10 @@ class Book extends ActiveRecord
     public static function tableName()
     {
         return 'example_books';
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

@@ -1,13 +1,9 @@
 <?php
-
-
 namespace execut\books\bootstrap\backend;
-
-
+use execut\books\models\Book;
 use execut\crud\navigation\Configurator;
 use execut\books\models\AllFields;
 use execut\navigation\Component;
-
 class Bootstrapper implements \execut\crud\bootstrap\Bootstrapper
 {
     public function bootstrapForAdmin(Component $navigation)
@@ -23,8 +19,8 @@ class Bootstrapper implements \execut\crud\bootstrap\Bootstrapper
         $navigation->addConfigurator([
             'class' => Configurator::class,
             'module' => 'books',
-            'moduleName' => 'СRUD fields examples',
-            'modelName' => 'Books',
+            'moduleName' => 'Books CRUD examples',
+            'modelName' => Book::MODEL_NAME,
             'controller' => 'books',
         ]);
 

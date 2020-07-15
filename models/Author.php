@@ -19,6 +19,7 @@ class Author extends ActiveRecord
 {
     use BehaviorStub, ModelsHelperTrait;
 
+    const MODEL_NAME = '{n,plural,=0{Authors} =1{Author} other{Authors}}';
     const POPULARITY_LIST = [
         1 => 'Low',
         2 => 'Middle',

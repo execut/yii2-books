@@ -1,9 +1,6 @@
 <?php
-
-
 namespace execut\books\bootstrap;
 use execut\crud\bootstrap\Bootstrapper;
-
 class Backend extends \execut\crud\bootstrap\Backend
 {
     public $moduleId = 'books';

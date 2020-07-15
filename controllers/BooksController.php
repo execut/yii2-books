@@ -1,15 +1,11 @@
 <?php
-
-
 namespace execut\books\controllers;
 
 use execut\books\models\Book;
 use execut\crud\params\Crud;
-use execut\books\models\AllFields;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
-
 class BooksController extends Controller
 {
     public function behaviors()
@@ -31,7 +27,7 @@ class BooksController extends Controller
     {
         $crud = new Crud([
             'modelClass' => Book::class,
-            'modelName' => 'Books',
+            'modelName' => Book::MODEL_NAME,
         ]);
         return $crud->actions();
     }
