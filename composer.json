@@ -19,7 +19,8 @@
   "require": {
     "php": "^7.4",
     "yiisoft/yii2": "@dev",
-    "execut/yii2-crud": "*"
+    "execut/yii2-crud": "*",
+    "execut/yii2-migration": "*"
   },
   "autoload": {
     "psr-4": {

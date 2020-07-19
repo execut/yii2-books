@@ -1,16 +1,21 @@
 <?php
 namespace execut\books\bootstrap;
 use execut\crud\bootstrap\Bootstrapper;
+use yii\helpers\ArrayHelper;
+
 class Backend extends \execut\crud\bootstrap\Backend
 {
     public $moduleId = 'books';
-    protected $_defaultDepends = [
-        'bootstrap' => [
-            'booksCommon' => [
-                'class' => Common::class,
+    public function getDefaultDepends()
+    {
+        return ArrayHelper::merge(parent::getDefaultDepends(), [
+            'bootstrap' => [
+                'booksCommon' => [
+                    'class' => Common::class,
+                ]
             ]
-        ]
-    ];
+        ]);
+    }
 
     /**
      * @return Bootstrapper

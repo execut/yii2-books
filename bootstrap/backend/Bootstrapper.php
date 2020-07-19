@@ -19,7 +19,7 @@ class Bootstrapper implements \execut\crud\bootstrap\Bootstrapper
         $navigation->addConfigurator([
             'class' => Configurator::class,
             'module' => 'books',
-            'moduleName' => 'Books CRUD examples',
+            'moduleName' => 'Books',
             'modelName' => Book::MODEL_NAME,
             'controller' => 'books',
         ]);
@@ -27,7 +27,7 @@ class Bootstrapper implements \execut\crud\bootstrap\Bootstrapper
         $navigation->addConfigurator([
             'class' => Configurator::class,
             'module' => 'books',
-            'moduleName' => 'СRUD fields examples',
+            'moduleName' => 'Books',
             'modelName' => 'Authors',
             'controller' => 'authors',
         ]);
