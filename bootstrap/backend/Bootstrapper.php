@@ -1,5 +1,6 @@
 <?php
 namespace execut\books\bootstrap\backend;
+use execut\books\models\Author;
 use execut\books\models\Book;
 use execut\crud\navigation\Configurator;
 use execut\books\models\AllFields;
@@ -28,7 +29,7 @@ class Bootstrapper implements \execut\crud\bootstrap\Bootstrapper
             'class' => Configurator::class,
             'module' => 'books',
             'moduleName' => 'Books',
-            'modelName' => 'Authors',
+            'modelName' => Author::MODEL_NAME,
             'controller' => 'authors',
         ]);
     }

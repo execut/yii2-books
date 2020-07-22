@@ -3,6 +3,8 @@
 
 namespace execut\books\controllers;
 
+use execut\actions\Action;
+use execut\actions\action\adapter\File;
 use execut\books\models\Author;
 use execut\books\models\Book;
 use execut\crud\params\Crud;
@@ -34,6 +36,18 @@ class AuthorsController extends Controller
             'modelClass' => Author::class,
             'modelName' => Author::MODEL_NAME,
         ]);
-        return $crud->actions();
+        return $crud->actions([
+            'image' => [
+                'class' => Action::class,
+                'adapter' => [
+                    'class' => File::class,
+                    'modelClass' => Author::class,
+                    'dataAttribute' => 'image_211',
+                    'nameAttribute' => 'image_name',
+                    'mimeTypeAttribute' => 'image_mime_type',
+                    'extensionAttribute' => 'image_extension',
+                ],
+            ]
+        ]);
     }
 }

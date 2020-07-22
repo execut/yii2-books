@@ -67,7 +67,7 @@ class Author extends ActiveRecord
                 ],
                 'attribute' => 'imageFile',
                 'dataAttribute' => 'image',
-                'previewRoute' => '/booksNative/authors/image',
+                'previewRoute' => '/books/authors/image',
                 'fileNameAttribute' => 'image_name',
                 'previewDataAttribute' => 'image_211',
                 'fileExtensionAttribute' => 'image_extension',
@@ -80,7 +80,7 @@ class Author extends ActiveRecord
                 'relation' => 'mainBook',
                 'relationQuery' => $this->hasOne(Book::class, ['id' => 'main_book_id']),
                 'url' => [
-                    '/booksNative/books'
+                    '/books/books'
                 ],
             ],
             'books' => [
@@ -89,7 +89,7 @@ class Author extends ActiveRecord
                 'relation' => 'books',
                 'relationQuery' => $this->hasMany(Book::class, ['id' => 'example_book_id'])->via('vsBooks'),
                 'url' => [
-                    '/booksNative/books'
+                    '/books/books'
                 ],
             ],
             'action' => [
