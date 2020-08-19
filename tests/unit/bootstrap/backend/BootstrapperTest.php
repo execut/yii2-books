@@ -5,6 +5,8 @@ namespace execut\books\bootstrap\backend;
 
 
 use Codeception\Test\Unit;
+use execut\books\models\Author;
+use execut\books\models\Book;
 use execut\crud\navigation\Configurator;
 use execut\books\models\AllFields;
 use execut\navigation\Component;
@@ -18,7 +20,7 @@ class BootstrapperTest extends Unit
             ->with([
                 'class' => Configurator::class,
                 'module' => 'books',
-                'moduleName' => 'СRUD fields examples',
+                'moduleName' => 'Books',
                 'modelName' => AllFields::MODEL_NAME,
                 'controller' => 'all-fields',
             ]);
@@ -27,8 +29,8 @@ class BootstrapperTest extends Unit
             ->with([
                 'class' => Configurator::class,
                 'module' => 'books',
-                'moduleName' => 'СRUD fields examples',
-                'modelName' => 'Books',
+                'moduleName' => 'Books',
+                'modelName' => Book::MODEL_NAME,
                 'controller' => 'books',
             ]);
         $navigation->expects($this->at(2))
@@ -36,8 +38,8 @@ class BootstrapperTest extends Unit
             ->with([
                 'class' => Configurator::class,
                 'module' => 'books',
-                'moduleName' => 'СRUD fields examples',
-                'modelName' => 'Authors',
+                'moduleName' => 'Books',
+                'modelName' => Author::MODEL_NAME,
                 'controller' => 'authors',
             ]);
 

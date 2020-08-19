@@ -5,6 +5,7 @@
 namespace execut\books\models;
 
 
+use Codeception\Test\Unit;
 use execut\crudFields\fields\Boolean;
 use execut\crudFields\fields\Date;
 use execut\crudFields\fields\Field;
@@ -15,10 +16,9 @@ use execut\crudFields\fields\reloader\Target;
 use execut\crudFields\fields\reloader\type\Periodically;
 use execut\crudFields\fields\reloader\type\Dependent;
 use execut\crudFields\fields\StringField;
-use execut\crudFields\TestCase;
 use yii\db\ActiveQuery;
 
-class AllFieldsTest extends TestCase
+class AllFieldsTest extends Unit
 {
     public function testGetFieldId() {
         $model = new AllFields();

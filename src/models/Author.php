@@ -1,6 +1,6 @@
 <?php
 namespace execut\books\models;
-use execut\booksNative\models\AuthorVsBook;
+use execut\books\models\AuthorVsBook;
 use execut\crudFields\Behavior;
 use execut\crudFields\BehaviorStub;
 use execut\crudFields\fields\Action;

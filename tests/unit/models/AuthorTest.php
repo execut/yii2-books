@@ -98,7 +98,7 @@ class AuthorTest extends TestCase
         $field = $model->getField('mainBook');
         $this->assertInstanceOf(HasOneSelect2::class, $field);
         $this->assertEquals([
-            '/booksNative/books'
+            '/books/books'
         ], $field->url);
         $relationQuery = $field->getRelationQuery();
         $this->assertInstanceOf(ActiveQuery::class, $relationQuery);
@@ -110,7 +110,7 @@ class AuthorTest extends TestCase
         $field = $model->getField('books');
         $this->assertInstanceOf(HasManySelect2::class, $field);
         $this->assertEquals([
-            '/booksNative/books'
+            '/books/books'
         ], $field->url);
         $this->assertEquals('books', $field->getRelationName());
         $relationQuery = $field->getRelationQuery();

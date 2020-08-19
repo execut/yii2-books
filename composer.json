@@ -22,9 +22,22 @@
     "execut/yii2-crud": "*",
     "execut/yii2-migration": "*"
   },
+  "require-dev": {
+    "codeception/codeception": "^4.0",
+    "codeception/module-asserts": "^1.0",
+    "codeception/module-yii2": "^1.0",
+    "codeception/module-filesystem": "^1.0",
+    "codeception/verify": "~0.5.0 || ~1.1.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
   "autoload": {
     "psr-4": {
-      "execut\\books\\": ""
+      "execut\\books\\": "src"
     }
   }
 }
