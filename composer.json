@@ -20,6 +20,7 @@
     "php": "^7.4",
     "yiisoft/yii2": "@dev",
     "execut/yii2-crud": "*",
+    "execut/yii2-crud-fields": "*",
     "execut/yii2-migration": "*"
   },
   "require-dev": {
