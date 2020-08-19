@@ -1,4 +1,11 @@
 # execut/yii2-books
+Модуль для управления книгами и их авторами.
+Является примером для демонстрации комплексной работы следующих инструментов для упрощения разработки на фреймворке Yii2:
+* [execut/yii2-crud](https://github.com/execut/yii2-crud)
+* [execut/yii2-navigation](https://github.com/execut/yii2-navigation)
+* [execut/yii2-migration](https://github.com/execut/yii2-migration)
+
+Нативный вариант данного CRUD на чистом Yii2 для сравнения можно посмотреть здесь [execut/yii2-books-native](https://github.com/execut/yii2-books-native)
 ## Принцип работы
 
 Модуль состоит из следующих блоков. Принцип работы каждого блока можно увидеть в документации пакетов с ним связанным:
