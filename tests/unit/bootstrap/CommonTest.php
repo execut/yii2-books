@@ -5,6 +5,7 @@ namespace execut\books\bootstrap;
 
 
 use Codeception\Test\Unit;
+use execut\books\Component;
 use execut\books\Module;
 use yii\helpers\UnsetArrayValue;
 use yii\web\Application;
@@ -20,5 +21,6 @@ class CommonTest extends Unit
         ]);
         $bootstrap->bootstrap(\yii::$app);
         $this->assertInstanceOf(Module::class, \yii::$app->getModule('books'));
+        $this->assertInstanceOf(Component::class, \yii::$app->get('books'));
     }
 }

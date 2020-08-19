@@ -10,6 +10,10 @@ class Book extends ActiveRecord
     use BehaviorStub;
     const MODEL_NAME = '{n,plural,=0{Books} =1{Book} other{Books}}';
     public function behaviors() {
+        if ($books = \yii::$app->get('books')) {
+            $booksCrudFieldsPlugins = $books->getBooksCrudFieldsPlugins();
+        }
+
         return [
             Behavior::KEY => [
                 'class' => Behavior::class,
@@ -26,6 +30,7 @@ class Book extends ActiveRecord
                         'class' => Action::class,
                     ]
                 ],
+                'plugins' => $booksCrudFieldsPlugins,
             ],
         ];
     }

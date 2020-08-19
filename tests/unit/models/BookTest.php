@@ -3,12 +3,11 @@
 
 namespace execut\books\models;
 
-
-use Codeception\PHPUnit\TestCase;
+use Codeception\Test\Unit;
 use execut\crudFields\fields\Id;
 use execut\crudFields\fields\StringField;
 
-class BookTest extends TestCase
+class BookTest extends Unit
 {
     public function testIdField() {
         $model = new Book();

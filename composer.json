@@ -3,7 +3,7 @@
   "description": "Yii2 books module",
   "keywords": ["yii2 books"],
   "homepage": "https://github.com/execut/yii2-books",
-  "type": "library",
+  "type": "yii2-extension",
   "license": "Apache-2.0",
   "support": {
     "issues": "https://github.com/execut/yii2-books/issues?state=open",
@@ -37,6 +37,9 @@
       "url": "https://asset-packagist.org"
     }
   ],
+  "extra": {
+    "bootstrap": "execut\\books\\bootstrap\\Auto"
+  },
   "autoload": {
     "psr-4": {
       "execut\\books\\": "src"

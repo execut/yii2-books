@@ -39,14 +39,12 @@ to the ```require``` section of your `composer.json` file.
 
 ## Configuration
 
-Add to your application configs:
+Add to your common application configs:
 ```php
 return [
     'bootstrap' => [
          'books' => [
-            'class' => \execut\books\bootstrap\Common::class,//For common application
-            'class' => \execut\books\bootstrap\Backend::class,//For backend application
-            'class' => \execut\books\bootstrap\Console::class,//For console application
+            'class' => \execut\books\bootstrap\Auto::class,
         ],
     ],
 ];
