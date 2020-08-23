@@ -1,17 +1,24 @@
 <?php
 /**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
  */
-
 namespace execut\books\bootstrap;
 
-
-use execut\books\models\Book;
 use yii\base\BootstrapInterface;
 use yii\console\Application;
-use yii\db\ActiveRecord;
 
+/**
+ * Auto bootstrap
+ * @package execut\books
+ */
 class Auto implements BootstrapInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function bootstrap($app)
     {
         $bootstraps = [];

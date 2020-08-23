@@ -1,6 +1,10 @@
 <?php
-
-
+/**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 namespace execut\books\controllers;
 
 use execut\crud\params\Crud;
@@ -9,8 +13,15 @@ use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 
+/**
+ * Class for rendering execut/yii2-crud-fields demo
+ * @package execut\books
+ */
 class AllFieldsController extends Controller
 {
+    /**
+     * {@inheritDoc}
+     */
     public function behaviors()
     {
         return ArrayHelper::merge(parent::behaviors(), [
@@ -26,6 +37,9 @@ class AllFieldsController extends Controller
         ]);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function actions()
     {
         $crud = new Crud([

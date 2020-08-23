@@ -1,7 +1,10 @@
 <?php
 /**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
  */
-
 namespace execut\books\models;
 
 
@@ -18,15 +21,21 @@ use execut\crudFields\fields\reloader\type\Dependent;
 use execut\crudFields\fields\StringField;
 use yii\db\ActiveQuery;
 
+/**
+ * AllFieldsTest
+ * @package execut\books
+ */
 class AllFieldsTest extends Unit
 {
-    public function testGetFieldId() {
+    public function testGetFieldId()
+    {
         $model = new AllFields();
         $id = $model->getField('id');
         $this->assertInstanceOf(Id::class, $id);
     }
 
-    public function testGetNameField() {
+    public function testGetNameField()
+    {
         $model = new AllFields();
         $field = $model->getField('name');
         $this->assertInstanceOf(StringField::class, $field);
@@ -34,14 +43,16 @@ class AllFieldsTest extends Unit
         $this->assertTrue($field->required);
     }
 
-    public function testGetFieldBool() {
+    public function testGetFieldBool()
+    {
         $model = new AllFields();
         $bool = $model->getField('bool');
         $this->assertInstanceOf(Boolean::class, $bool);
         $this->assertEquals('bool', $bool->attribute);
     }
 
-    public function testHasOneField() {
+    public function testHasOneField()
+    {
         $model = new AllFields();
         $hasOne = $model->getField('hasOne');
         $this->assertInstanceOf(HasOneSelect2::class, $hasOne);
@@ -53,7 +64,8 @@ class AllFieldsTest extends Unit
         ], $hasOne->url);
     }
 
-    public function testPeriodicallyUpdatedField() {
+    public function testPeriodicallyUpdatedField()
+    {
         $model = new AllFields();
         $field = $model->getField('periodically_updated');
         $this->assertInstanceOf(Field::class, $field);
@@ -62,7 +74,8 @@ class AllFieldsTest extends Unit
         $this->assertInstanceOf(Periodically::class, $reloader->getType());
     }
 
-    public function testPeriodicallyUpdatedWidgetField() {
+    public function testPeriodicallyUpdatedWidgetField()
+    {
         $model = new AllFields();
         $field = $model->getField('periodicallyUpdatedWidget');
         $this->assertInstanceOf(HasOneSelect2::class, $field);
@@ -74,14 +87,16 @@ class AllFieldsTest extends Unit
         $this->assertInstanceOf(Periodically::class, $reloader->getType());
     }
 
-    public function testRecord_for_update_when_a_specific_value_selectedField() {
+    public function testRecord_for_update_when_a_specific_value_selectedField()
+    {
         $model = new AllFields();
         $field = $model->getField('record_for_update_when_a_specific_value_selected');
         $this->assertInstanceOf(Boolean::class, $field);
 
     }
 
-    public function testChange_updatedField() {
+    public function testChange_updatedField()
+    {
         $model = new AllFields();
         $field = $model->getField('change_updated');
         $this->assertInstanceOf(Date::class, $field);
@@ -97,7 +112,8 @@ class AllFieldsTest extends Unit
         $this->assertInstanceOf(Dependent::class, $reloader->getType());
     }
 
-    public function testspecific_value_selected_updatedField() {
+    public function testspecific_value_selected_updatedField()
+    {
         $model = $this->getMockBuilder(AllFields::class)->onlyMethods(['findRecordForUpdateWhenSpecificValueSelected'])->getMock();
         $model->method('findRecordForUpdateWhenSpecificValueSelected')
             ->willReturn(1);
@@ -116,7 +132,8 @@ class AllFieldsTest extends Unit
         $this->assertInstanceOf(Dependent::class, $reloader->getType());
     }
 
-    public function testEmpty_updatedField() {
+    public function testEmpty_updatedField()
+    {
         $model = new AllFields();
         $field = $model->getField('empty_updated');
         $this->assertInstanceOf(Date::class, $field);
@@ -133,7 +150,8 @@ class AllFieldsTest extends Unit
         $this->assertInstanceOf(Dependent::class, $reloader->getType());
     }
 
-    public function testNot_empty_updatedField() {
+    public function testNot_empty_updatedField()
+    {
         $model = new AllFields();
         $field = $model->getField('not_empty_updated');
         $this->assertInstanceOf(Date::class, $field);

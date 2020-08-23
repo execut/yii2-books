@@ -8,14 +8,31 @@
 
 namespace execut\books;
 
+use \execut\crudFields\Plugin;
 
+/**
+ * Component for books module extending via plugins
+ * @package execut\books
+ */
 class Component extends \yii\base\Component
 {
+    /**
+     * @var array List of books plugins
+     */
     protected $booksPlugins = [];
-    public function addBooksCrudFieldsPlugin($plugin) {
+
+    /**
+     * Add new books crud fields plugin
+     * @param Plugin $plugin
+     */
+    public function addBooksCrudFieldsPlugin(Plugin $plugin) {
         $this->booksPlugins[] = $plugin;
     }
 
+    /**
+     * Returns available plugins
+     * @return array
+     */
     public function getBooksCrudFieldsPlugins() {
         return $this->booksPlugins;
     }

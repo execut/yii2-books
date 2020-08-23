@@ -9,13 +9,27 @@ namespace execut\books\models;
 use execut\crudFields\Behavior;
 use yii\helpers\ArrayHelper;
 
-class BookPluggable extends Book
+/**
+ * Pluggable model of book
+ * @package execut\books\models
+ */
+class BookPluggableViaComponent extends Book
 {
+    /**
+     * {@inheritDoc}
+     */
     public function behaviors()
     {
+        if (\yii::$app->has('books')) {
+            $books = \yii::$app->get('books');
+            $booksCrudFieldsPlugins = $books->getBooksCrudFieldsPlugins();
+        } else {
+            $booksCrudFieldsPlugins = [];
+        }
+
         return ArrayHelper::merge(parent::behaviors(), [
             Behavior::KEY => [
-                'plugins' => \yii::$app->getModule('booksNative')->booksPlugins,
+                'plugins' => $booksCrudFieldsPlugins,
             ]
         ]);
     }

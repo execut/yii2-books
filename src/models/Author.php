@@ -1,6 +1,12 @@
 <?php
+/**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 namespace execut\books\models;
-use execut\books\models\AuthorVsBook;
+
 use execut\crudFields\Behavior;
 use execut\crudFields\BehaviorStub;
 use execut\crudFields\fields\Action;
@@ -15,17 +21,38 @@ use execut\crudFields\ModelsHelperTrait;
 use Imagine\Image\ImageInterface;
 use lhs\Yii2SaveRelationsBehavior\SaveRelationsBehavior;
 use yii\db\ActiveRecord;
+use yii\web\UploadedFile;
+
+/**
+ * Author model
+ * @package execut\books
+ */
 class Author extends ActiveRecord
 {
     use BehaviorStub, ModelsHelperTrait;
 
+    /**
+     * Model name label for translations
+     */
     const MODEL_NAME = '{n,plural,=0{Authors} =1{Author} other{Authors}}';
+    /**
+     * List of a possible popularity of authors
+     */
     const POPULARITY_LIST = [
         1 => 'Low',
         2 => 'Middle',
         3 => 'Hight',
     ];
+
+    /**
+     * Attribute for image file uploading
+     * @var UploadedFile
+     */
     public $imageFile = null;
+
+    /**
+     * {@inheritDoc}
+     */
     public function behaviors() {
         return $this->getStandardBehaviors($this->getStandardFields(['visible'], [
             'name' => [
@@ -105,10 +132,17 @@ class Author extends ActiveRecord
         ]);
     }
 
+    /**
+     * Returns vsBooks relation query
+     * @return \yii\db\ActiveQuery
+     */
     public function getVsBooks() {
         return $this->hasMany(AuthorVsBook::class, ['example_author_id' => 'id']);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public static function tableName()
     {
         return 'example_authors';

@@ -1,4 +1,10 @@
 <?php
+/**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 namespace execut\books\models;
 
 
@@ -16,84 +22,101 @@ use execut\crudFields\fields\StringField;
 use execut\crudFields\fields\Textarea;
 use yii\db\ActiveQuery;
 
+/**
+ * AuthorTest
+ * @package execut\books
+ */
 class AuthorTest extends TestCase
 {
-    public function testIdField() {
+    public function testIdField()
+    {
         $model = new Author();
         $field = $model->getField('id');
         $this->assertInstanceOf(Id::class, $field);
     }
 
-    public function testNameField() {
+    public function testNameField()
+    {
         $model = new Author();
         $field = $model->getField('name');
         $this->assertInstanceOf(StringField::class, $field);
         $this->assertTrue($field->required);
     }
 
-    public function testAction() {
+    public function testAction()
+    {
         $model = new Author();
         $field = $model->getField('action');
         $this->assertInstanceOf(Action::class, $field);
     }
 
-    public function testCreatedField() {
+    public function testCreatedField()
+    {
         $model = new Author();
         $field = $model->getField('created');
         $this->assertInstanceOf(Date::class, $field);
     }
 
-    public function testUpdatedField() {
+    public function testUpdatedField()
+    {
         $model = new Author();
         $field = $model->getField('updated');
         $this->assertInstanceOf(Date::class, $field);
     }
 
-    public function testSurnameField() {
+    public function testSurnameField()
+    {
         $model = new Author();
         $field = $model->getField('name');
         $this->assertInstanceOf(StringField::class, $field);
         $this->assertTrue($field->required);
     }
 
-    public function testShortdescriptionField() {
+    public function testShortdescriptionField()
+    {
         $model = new Author();
         $field = $model->getField('short_description');
         $this->assertInstanceOf(Textarea::class, $field);
     }
 
-    public function testBiographyField() {
+    public function testBiographyField()
+    {
         $model = new Author();
         $field = $model->getField('biography');
         $this->assertInstanceOf(Editor::class, $field);
     }
 
-    public function testBirthdate() {
+    public function testBirthdate()
+    {
         $model = new Author();
         $field = $model->getField('birthday');
         $this->assertInstanceOf(Date::class, $field);
     }
     
-    public function testPopularity() {
+    public function testPopularity()
+    {
         $model = new Author();
         $field = $model->getField('popularity');
         $this->assertInstanceOf(DropDown::class, $field);
         $this->assertEquals(Author::POPULARITY_LIST, $field->data);
     }
 
-    public function testEmail() {
+    public function testEmail()
+    {
         $model = new Author();
         $field = $model->getField('email');
         $this->assertInstanceOf(Email::class, $field);
     }
 
-    public function testImage() {
+    public function testImage()
+    {
         $model = new Author();
         $field = $model->getField('image');
         $this->assertInstanceOf(Image::class, $field);
     }
 
-    public function testMainBook() {
+    public function testMainBook()
+    {
         $model = new Author();
         $field = $model->getField('mainBook');
         $this->assertInstanceOf(HasOneSelect2::class, $field);
@@ -105,7 +128,8 @@ class AuthorTest extends TestCase
         $this->assertEquals(['id' => 'main_book_id'], $relationQuery->link);
     }
 
-    public function testBooks() {
+    public function testBooks()
+    {
         $model = new Author();
         $field = $model->getField('books');
         $this->assertInstanceOf(HasManySelect2::class, $field);
