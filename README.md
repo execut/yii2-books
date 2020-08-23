@@ -37,19 +37,6 @@ or add
 
 to the ```require``` section of your `composer.json` file.
 
-## Configuration
-
-Add to your common application configs:
-```php
-return [
-    'bootstrap' => [
-         'books' => [
-            'class' => \execut\books\bootstrap\Auto::class,
-        ],
-    ],
-];
-```
-
 Apply module migrations:
 ```shell script
 ./yii migrate/up --interactive=0
