@@ -7,7 +7,7 @@ It is an example to demonstrate the integration of the following tools to simpli
 
 The native version of this CRUD in pure Yii2 for comparison can be viewed here [execut/yii2-books-native](https://github.com/execut/yii2-books-native)
 
-For license information check the [LICENSE](LICENSE.md)-file.
+For license information check the [LICENSE-file](https://github.com/execut/yii2-books/blob/master/LICENSE.md).
 
 English documentation is at [docs/guide/README.md](https://github.com/execut/yii2-books/blob/master/docs/guide/README.md).
 
