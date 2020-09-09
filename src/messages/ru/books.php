@@ -13,7 +13,6 @@ return [
     'СRUD fields examples' => 'Демо',
     \execut\books\models\Author::MODEL_NAME => '{n,plural,=0{Авторов} =1{Автор} other{Авторы}}',
     \execut\books\models\Book::MODEL_NAME => '{n,plural,=0{Книг} =1{Книга} other{Книги}}',
-    \execut\books\models\AllFields::MODEL_NAME => '{n,plural,=0{CRUD-поле} =1{CRUD-поле} other{CRUD-поля}}',
     'Has One' => 'Выпадающий список',
     'Not found' => 'Не найдено',
     'Page is not found' => 'Страница не найдена',

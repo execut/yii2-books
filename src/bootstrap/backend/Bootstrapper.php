@@ -28,14 +28,6 @@ class Bootstrapper implements \execut\crud\bootstrap\Bootstrapper
             'class' => Configurator::class,
             'module' => 'books',
             'moduleName' => 'Books',
-            'modelName' => AllFields::MODEL_NAME,
-            'controller' => 'all-fields',
-        ]);
-
-        $navigation->addConfigurator([
-            'class' => Configurator::class,
-            'module' => 'books',
-            'moduleName' => 'Books',
             'modelName' => Book::MODEL_NAME,
             'controller' => 'books',
         ]);
