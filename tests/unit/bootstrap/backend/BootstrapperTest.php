@@ -11,7 +11,7 @@ use Codeception\Test\Unit;
 use execut\books\models\Author;
 use execut\books\models\Book;
 use execut\crud\navigation\Configurator;
-use execut\books\models\AllFields;
+use execut\crudFields\models\AllFields;
 use execut\navigation\Component;
 
 /**
@@ -29,19 +29,10 @@ class BootstrapperTest extends Unit
                 'class' => Configurator::class,
                 'module' => 'books',
                 'moduleName' => 'Books',
-                'modelName' => AllFields::MODEL_NAME,
-                'controller' => 'all-fields',
-            ]);
-        $navigation->expects($this->at(1))
-            ->method('addConfigurator')
-            ->with([
-                'class' => Configurator::class,
-                'module' => 'books',
-                'moduleName' => 'Books',
                 'modelName' => Book::MODEL_NAME,
                 'controller' => 'books',
             ]);
-        $navigation->expects($this->at(2))
+        $navigation->expects($this->at(1))
             ->method('addConfigurator')
             ->with([
                 'class' => Configurator::class,
